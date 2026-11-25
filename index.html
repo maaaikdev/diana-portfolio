@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diana Pinzón | Digital & UI/UX Designer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!-- Google Fonts Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        sunset: {
+                            gold: '#FFAA5A',
+                            coral: '#FF6B6B',
+                            rose: '#E85D75',
+                            purple: '#6B4E71',
+                            dusk: '#1D182A',
+                            night: '#120F1D',
+                            cream: '#FAF7F2',
+                            sand: '#FFFDF9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-rose-500 selection:text-white">
+
+    <!-- Fixed Navigation Header -->
+    <header class="sticky top-0 z-40 transition-all duration-300 glass-card border-b backdrop-blur-md" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#hero" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex items-center justify-center text-white font-display font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+                        DP
+                    </div>
+                    <div>
+                        <span class="font-display font-bold text-lg tracking-tight block leading-none">Diana Pinzón</span>
+                        <span class="text-xs text-rose-500 dark:text-amber-400 font-medium" data-i18n="navRole">Digital & UI/UX Designer</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                    <a href="#about" class="hover:text-rose-500 transition-colors" data-i18n="navAbout">About Me</a>
+                    <a href="#skills" class="hover:text-rose-500 transition-colors" data-i18n="navSkills">Skills</a>
+                    <a href="#portfolio" class="hover:text-rose-500 transition-colors" data-i18n="navPortfolio">Portfolio</a>
+                    <a href="#experience" class="hover:text-rose-500 transition-colors" data-i18n="navExperience">Experience</a>
+                    <a href="#contact" class="hover:text-rose-500 transition-colors" data-i18n="navContact">Contact</a>
+                </nav>
+
+                <!-- Actions Controls (Language, Theme, CTA) -->
+                <div class="flex items-center space-x-3 sm:space-x-4">
+                    <!-- Language Switcher Button -->
+                    <button id="langToggle" aria-label="Toggle Language" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl border border-rose-300/40 dark:border-purple-800 text-xs font-bold bg-amber-500/10 hover:bg-rose-500 hover:text-white transition-all">
+                        <i class="fa-solid fa-globe"></i>
+                        <span id="langLabel">ES</span>
+                    </button>
+
+                    <!-- Theme Toggle Button -->
+                    <button id="themeToggle" aria-label="Toggle Theme" class="p-2.5 rounded-full border border-gray-200 dark:border-purple-800 text-gray-700 dark:text-amber-300 hover:bg-amber-100/50 dark:hover:bg-purple-900/50 transition-all">
+                        <i id="themeIcon" class="fa-solid fa-moon text-base"></i>
+                    </button>
+
+                    <!-- Contact CTA -->
+                    <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white sunset-btn-primary rounded-lg shadow-sm" data-i18n="navCta">
+                        Let's Talk
+                    </a>
+
+                    <!-- Mobile Hamburger Menu Button -->
+                    <button id="mobileMenuBtn" aria-label="Open Menu" class="md:hidden p-2 text-2xl focus:outline-none">
+                        <i id="menuIcon" class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-gray-200 dark:border-purple-900/40 bg-white/95 dark:bg-purple-950/95 backdrop-blur-lg px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="mobile-nav-link block py-2 px-3 rounded-lg font-medium hover:bg-rose-50 dark:hover:bg-purple-900/40" data-i18n="navAbout">About Me</a>
+            <a href="#skills" class="mobile-nav-link block py-2 px-3 rounded-lg font-medium hover:bg-rose-50 dark:hover:bg-purple-900/40" data-i18n="navSkills">Skills</a>
+            <a href="#portfolio" class="mobile-nav-link block py-2 px-3 rounded-lg font-medium hover:bg-rose-50 dark:hover:bg-purple-900/40" data-i18n="navPortfolio">Portfolio</a>
+            <a href="#experience" class="mobile-nav-link block py-2 px-3 rounded-lg font-medium hover:bg-rose-50 dark:hover:bg-purple-900/40" data-i18n="navExperience">Experience</a>
+            <a href="#contact" class="mobile-nav-link block py-2 px-3 rounded-lg font-medium hover:bg-rose-50 dark:hover:bg-purple-900/40" data-i18n="navContact">Contact</a>
+            <div class="pt-2 flex justify-center space-x-6 border-t border-gray-200 dark:border-purple-900/40">
+                <a href="https://www.behance.net/catalinapid922" target="_blank" class="text-rose-500 hover:scale-110 transition-transform"><i class="fa-brands fa-behance text-xl"></i></a>
+                <a href="https://imaginary-marlin-58a.notion.site/Hi-I-m-Diana-122d0011062b807b816aefa451967b52#122d0011062b81939df5e315dba09f29" target="_blank" class="text-rose-500 hover:scale-110 transition-transform"><i class="fa-solid fa-book-bookmark text-xl"></i></a>
+                <a href="mailto:catalinapinzon1@gmail.com" class="text-rose-500 hover:scale-110 transition-transform"><i class="fa-solid fa-envelope text-xl"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="overflow-hidden">
+        <!-- Hero Section -->
+        <section id="hero" class="relative pt-12 pb-20 md:pt-24 md:pb-32 flex items-center justify-center min-h-[calc(100vh-80px)]">
+            <div class="absolute top-1/4 left-10 w-72 h-72 bg-amber-400/20 dark:bg-amber-500/10 rounded-full filter blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-rose-500/20 dark:bg-purple-600/20 rounded-full filter blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-amber-100 dark:bg-purple-900/60 border border-amber-300/50 dark:border-rose-500/30 text-amber-900 dark:text-amber-200 text-xs font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span data-i18n="heroStatus">Available for UI/UX & Digital Design projects</span>
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight leading-tight">
+                            <span data-i18n="heroGreeting">Hello, I'm</span> <br class="hidden sm:inline" />
+                            <span class="sunset-gradient-text">Diana Catalina Pinzón</span>
+                        </h1>
+
+                        <p class="text-xl font-medium text-rose-600 dark:text-amber-300 font-display" data-i18n="heroTagline">
+                            Digital & UI/UX Designer | Figma & E-commerce Specialist
+                        </p>
+
+                        <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed mx-auto lg:mx-0" data-i18n="heroBio">
+                            5+ years of experience structuring user flows, designing high-fidelity interactive prototypes in Figma, and optimizing digital layouts for conversion across global and e-commerce platforms.
+                        </p>
+
+                        <div class="flex items-center justify-center lg:justify-start text-sm text-gray-500 dark:text-gray-400 space-x-2">
+                            <i class="fa-solid fa-location-dot text-rose-500"></i>
+                            <span data-i18n="heroLocation">Sabaneta, Colombia (Remote / Hybrid)</span>
+                        </div>
+
+                        <div class="pt-4 flex flex-wrap gap-4 justify-center lg:justify-start">
+                            <a href="#portfolio" class="px-6 py-3.5 text-sm font-semibold text-white sunset-btn-primary rounded-xl shadow-lg flex items-center space-x-2">
+                                <span data-i18n="heroCtaPortfolio">Explore Work</span>
+                                <i class="fa-solid fa-arrow-down text-xs"></i>
+                            </a>
+                            <a href="#contact" class="px-6 py-3.5 text-sm font-semibold rounded-xl border-2 border-rose-400/40 hover:border-rose-500 dark:border-purple-600 hover:bg-rose-50 dark:hover:bg-purple-900/30 transition-all flex items-center space-x-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span data-i18n="heroCtaContact">Contact Me</span>
+                            </a>
+                        </div>
+
+                        <div class="pt-6 border-t border-gray-200 dark:border-purple-900/50 flex items-center justify-center lg:justify-start space-x-6">
+                            <span class="text-xs uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500" data-i18n="heroPortfoliosLabel">Direct Portfolios:</span>
+                            <a href="https://www.behance.net/catalinapid922" target="_blank" title="Behance Portfolio" class="text-gray-600 dark:text-gray-300 hover:text-rose-500 dark:hover:text-amber-400 transition-colors text-xl">
+                                <i class="fa-brands fa-behance"></i>
+                            </a>
+                            <a href="https://imaginary-marlin-58a.notion.site/Hi-I-m-Diana-122d0011062b807b816aefa451967b52#122d0011062b81939df5e315dba09f29" target="_blank" title="Notion Portfolio" class="text-gray-600 dark:text-gray-300 hover:text-rose-500 dark:hover:text-amber-400 transition-colors text-xl">
+                                <i class="fa-solid fa-book"></i>
+                            </a>
+                            <a href="mailto:catalinapinzon1@gmail.com" title="Email" class="text-gray-600 dark:text-gray-300 hover:text-rose-500 dark:hover:text-amber-400 transition-colors text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual Card -->
+                    <div class="lg:col-span-5">
+                        <div class="relative max-w-md mx-auto">
+                            <div class="absolute -inset-1.5 bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+                            
+                            <div class="relative glass-card rounded-3xl p-8 space-y-6 shadow-2xl">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-400 to-rose-500 flex items-center justify-center text-white text-2xl font-bold shadow-md">
+                                        Figma
+                                    </div>
+                                    <div>
+                                        <h3 class="font-display font-bold text-lg" data-i18n="heroBadgeTitle">Figma UI & Design Systems</h3>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="heroBadgeSub">Interactive Prototypes & Components</p>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-3 pt-2">
+                                    <div class="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-between">
+                                        <div class="flex items-center space-x-3">
+                                            <i class="fa-solid fa-layer-group text-amber-500"></i>
+                                            <span class="text-sm font-medium" data-i18n="heroFeat1">User Flows & Architecture</span>
+                                        </div>
+                                        <i class="fa-solid fa-check text-emerald-500 text-xs"></i>
+                                    </div>
+
+                                    <div class="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-between">
+                                        <div class="flex items-center space-x-3">
+                                            <i class="fa-solid fa-cart-shopping text-rose-500"></i>
+                                            <span class="text-sm font-medium" data-i18n="heroFeat2">E-commerce CRO & Layouts</span>
+                                        </div>
+                                        <i class="fa-solid fa-check text-emerald-500 text-xs"></i>
+                                    </div>
+
+                                    <div class="p-3.5 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-between">
+                                        <div class="flex items-center space-x-3">
+                                            <i class="fa-solid fa-language text-purple-400"></i>
+                                            <span class="text-sm font-medium" data-i18n="heroFeat3">Bilingual English Proficiency (B2+)</span>
+                                        </div>
+                                        <i class="fa-solid fa-check text-emerald-500 text-xs"></i>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-purple-900/40">
+                                    <span data-i18n="heroExpText">5+ Years Experience</span>
+                                    <span>TripleTen UX/UI Alum</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 bg-amber-50/50 dark:bg-purple-950/20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs uppercase tracking-widest font-extrabold text-rose-500 mb-2" data-i18n="aboutPre">Get To Know Me</h2>
+                    <p class="text-3xl sm:text-4xl font-display font-bold" data-i18n="aboutTitle">About Me</p>
+                    <div class="w-16 h-1 bg-gradient-to-r from-amber-500 to-rose-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-6 space-y-6 text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p class="text-lg font-medium text-gray-800 dark:text-gray-100" data-i18n="aboutP1">
+                            Digital & UI/UX Designer with over 5 years of experience designing digital interfaces, optimizing user flows, and structuring information architecture for e-commerce environments and interactive platforms.
+                        </p>
+                        <p data-i18n="aboutP2">
+                            Hands-on experience using Figma to build interactive prototypes, reusable UI components, and structured visual libraries. Skilled at translating business requirements into clear visual hierarchies and user-friendly interfaces oriented toward sales conversion.
+                        </p>
+                        <p data-i18n="aboutP3">
+                            Proven track record working with international clients and cross-functional teams with professional communication and commercial copywriting in English (B2/B2+ level).
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-4 pt-4">
+                            <div class="p-4 rounded-xl glass-card">
+                                <span class="block text-3xl font-display font-extrabold text-amber-500 mb-1">5+</span>
+                                <span class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide" data-i18n="aboutStat1">Years Experience</span>
+                            </div>
+                            <div class="p-4 rounded-xl glass-card">
+                                <span class="block text-3xl font-display font-extrabold text-rose-500 mb-1">+35%</span>
+                                <span class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide" data-i18n="aboutStat2">E-commerce Sales Boost</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Cards -->
+                    <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-6 rounded-2xl glass-card border border-amber-200 dark:border-purple-800/40 hover:shadow-lg transition-shadow space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-pen-nib"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-lg" data-i18n="pillar1Title">UI & Wireframing</h3>
+                            <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="pillar1Desc">Meticulous interface layout for web & mobile with visual balance and ease of use.</p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl glass-card border border-rose-200 dark:border-purple-800/40 hover:shadow-lg transition-shadow space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-cubes"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-lg" data-i18n="pillar2Title">Design Systems</h3>
+                            <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="pillar2Desc">Building scalable component libraries, variants, and visual style guides in Figma.</p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl glass-card border border-purple-200 dark:border-purple-800/40 hover:shadow-lg transition-shadow space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-diagram-project"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-lg" data-i18n="pillar3Title">User Flows</h3>
+                            <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="pillar3Desc">Mapping user journeys to reduce friction in booking, registration, and checkout.</p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl glass-card border border-amber-200 dark:border-purple-800/40 hover:shadow-lg transition-shadow space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-lg" data-i18n="pillar4Title">Global Brand Strategy</h3>
+                            <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="pillar4Desc">Designing responsive rich media formats for Amazon and US market expansion.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs uppercase tracking-widest font-extrabold text-rose-500 mb-2" data-i18n="skillsPre">Toolbox & Capabilities</h2>
+                    <p class="text-3xl sm:text-4xl font-display font-bold" data-i18n="skillsTitle">Skills & Expertise</p>
+                    <div class="w-16 h-1 bg-gradient-to-r from-amber-500 to-rose-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- UI/UX Design -->
+                    <div class="p-8 rounded-3xl glass-card space-y-6 border border-amber-500/20">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-xl" data-i18n="skillCat1">UI/UX & Product</h3>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-rose-500 text-xs"></i><span>Figma (Prototyping & Components)</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-rose-500 text-xs"></i><span>Interface Layout & Wireframing</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-rose-500 text-xs"></i><span>Information Architecture</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-rose-500 text-xs"></i><span>User Flows & Journey Mapping</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-rose-500 text-xs"></i><span>Design Systems (Foundational)</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Software & Tools -->
+                    <div class="p-8 rounded-3xl glass-card space-y-6 border border-rose-500/20">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-rose-500/10 text-rose-500 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-xl" data-i18n="skillCat2">Software & Code</h3>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="p-3 rounded-xl bg-black/5 dark:bg-white/5 text-center text-xs font-medium">Figma</div>
+                            <div class="p-3 rounded-xl bg-black/5 dark:bg-white/5 text-center text-xs font-medium">Photoshop</div>
+                            <div class="p-3 rounded-xl bg-black/5 dark:bg-white/5 text-center text-xs font-medium">Illustrator</div>
+                            <div class="p-3 rounded-xl bg-black/5 dark:bg-white/5 text-center text-xs font-medium">InDesign</div>
+                            <div class="p-3 rounded-xl bg-black/5 dark:bg-white/5 text-center text-xs font-medium">After Effects</div>
+                            <div class="p-3 rounded-xl bg-black/5 dark:bg-white/5 text-center text-xs font-medium">WordPress</div>
+                            <div class="p-3 rounded-xl bg-black/5 dark:bg-white/5 text-center text-xs font-medium col-span-2">HTML5 / CSS3 (Basic)</div>
+                        </div>
+                    </div>
+
+                    <!-- Education & Languages -->
+                    <div class="p-8 rounded-3xl glass-card space-y-6 border border-purple-500/20">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-xl" data-i18n="skillCat3">Education & Languages</h3>
+                        </div>
+
+                        <div class="space-y-4 text-xs">
+                            <div class="p-3.5 rounded-xl bg-black/5 dark:bg-white/5 space-y-1">
+                                <span class="font-bold block text-sm text-amber-600 dark:text-amber-300">UX/UI Design Bootcamp</span>
+                                <span class="text-gray-500 dark:text-gray-400">TripleTen</span>
+                            </div>
+
+                            <div class="p-3.5 rounded-xl bg-black/5 dark:bg-white/5 space-y-1">
+                                <span class="font-bold block text-sm text-rose-500" data-i18n="eduDegree">Graphic Design Tech Degree</span>
+                                <span class="text-gray-500 dark:text-gray-400">Escuela de Artes y Letras</span>
+                            </div>
+
+                            <div class="p-3.5 rounded-xl bg-black/5 dark:bg-white/5 space-y-1">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-sm text-purple-400" data-i18n="langTitle">English (Written / Prof.)</span>
+                                    <span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 text-[10px]">B2 / B2+</span>
+                                </div>
+                                <span class="text-gray-500 dark:text-gray-400 block" data-i18n="langDesc">Intermediate/Professional written communication for international projects.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio / Projects Section -->
+        <section id="portfolio" class="py-20 bg-amber-50/30 dark:bg-purple-950/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs uppercase tracking-widest font-extrabold text-rose-500 mb-2" data-i18n="portPre">Featured Case Studies</h2>
+                    <p class="text-3xl sm:text-4xl font-display font-bold" data-i18n="portTitle">Selected Work & Projects</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2" data-i18n="portSub">Click any project card to open its detailed breakdown, user flow, and design system specs.</p>
+                    <div class="w-16 h-1 bg-gradient-to-r from-amber-500 to-rose-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- Projects Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- Card 1: Hotel Booking App -->
+                    <div class="rounded-3xl glass-card overflow-hidden border border-amber-500/20 flex flex-col justify-between group hover:shadow-2xl transition-all">
+                        <div class="p-8 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-300 border border-amber-500/30">
+                                    Figma Project
+                                </span>
+                                <i class="fa-solid fa-hotel text-2xl text-amber-500"></i>
+                            </div>
+
+                            <h3 class="text-2xl font-display font-bold group-hover:text-rose-500 transition-colors" data-i18n="p1Title">
+                                Hotel Booking App UI & User Flow
+                            </h3>
+
+                            <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed" data-i18n="p1Desc">
+                                Mapped the end-to-end booking flow, designing intuitive interfaces for room selection, search filters, and checkout processes.
+                            </p>
+
+                            <div class="pt-2">
+                                <p class="text-xs font-semibold uppercase text-rose-500 mb-2" data-i18n="pKeyHighlights">Key Highlights:</p>
+                                <ul class="text-xs text-gray-500 dark:text-gray-400 space-y-1.5 list-disc list-inside">
+                                    <li data-i18n="p1H1">Reusable Figma component library (buttons, cards, inputs).</li>
+                                    <li data-i18n="p1H2">Structured visual hierarchy optimizing conversion rate.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-black/5 dark:bg-white/5 border-t border-gray-200/50 dark:border-purple-900/30 flex items-center justify-between">
+                            <div class="flex space-x-2 text-xs font-medium text-gray-500">
+                                <span>Figma</span> • <span>User Flows</span> • <span>UI Kit</span>
+                            </div>
+                            <button onclick="openProjectDetail('hotel')" class="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl sunset-btn-primary text-white text-xs font-bold">
+                                <span data-i18n="btnViewDetail">View Details</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Music Streaming App -->
+                    <div class="rounded-3xl glass-card overflow-hidden border border-rose-500/20 flex flex-col justify-between group hover:shadow-2xl transition-all">
+                        <div class="p-8 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-rose-500/10 text-rose-500 border border-rose-500/30">
+                                    Interactive Prototype
+                                </span>
+                                <i class="fa-solid fa-music text-2xl text-rose-500"></i>
+                            </div>
+
+                            <h3 class="text-2xl font-display font-bold group-hover:text-rose-500 transition-colors" data-i18n="p2Title">
+                                Music Streaming App UI & Prototyping
+                            </h3>
+
+                            <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed" data-i18n="p2Desc">
+                                Created high-fidelity interactive prototypes in Figma to test mobile navigation and media playback touch interactions.
+                            </p>
+
+                            <div class="pt-2">
+                                <p class="text-xs font-semibold uppercase text-rose-500 mb-2" data-i18n="pKeyHighlights">Key Highlights:</p>
+                                <ul class="text-xs text-gray-500 dark:text-gray-400 space-y-1.5 list-disc list-inside">
+                                    <li data-i18n="p2H1">Mobile thumb-zone navigation layout for one-handed use.</li>
+                                    <li data-i18n="p2H2">Figma interactive component variants and smooth gesture transitions.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-black/5 dark:bg-white/5 border-t border-gray-200/50 dark:border-purple-900/30 flex items-center justify-between">
+                            <div class="flex space-x-2 text-xs font-medium text-gray-500">
+                                <span>Prototyping</span> • <span>Mobile UI</span> • <span>Figma</span>
+                            </div>
+                            <button onclick="openProjectDetail('music')" class="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl sunset-btn-primary text-white text-xs font-bold">
+                                <span data-i18n="btnViewDetail">View Details</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Anyeluz E-commerce -->
+                    <div class="rounded-3xl glass-card overflow-hidden border border-purple-500/20 flex flex-col justify-between group hover:shadow-2xl transition-all">
+                        <div class="p-8 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/30">
+                                    E-commerce & US Market
+                                </span>
+                                <i class="fa-solid fa-bag-shopping text-2xl text-purple-400"></i>
+                            </div>
+
+                            <h3 class="text-2xl font-display font-bold group-hover:text-rose-500 transition-colors" data-i18n="p3Title">
+                                Anyeluz E-commerce Interface & US Market
+                            </h3>
+
+                            <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed" data-i18n="p3Desc">
+                                Designed and structured the visual layout for web and digital sales channels, tailoring digital assets for Anyeluz USA in English.
+                            </p>
+
+                            <div class="pt-2">
+                                <p class="text-xs font-semibold uppercase text-rose-500 mb-2" data-i18n="pKeyHighlights">Key Highlights:</p>
+                                <ul class="text-xs text-gray-500 dark:text-gray-400 space-y-1.5 list-disc list-inside">
+                                    <li data-i18n="p3H1">Information hierarchy refinement to improve conversion.</li>
+                                    <li data-i18n="p3H2">Commercial copywriting and messaging in English for US market launch.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-black/5 dark:bg-white/5 border-t border-gray-200/50 dark:border-purple-900/30 flex items-center justify-between">
+                            <div class="flex space-x-2 text-xs font-medium text-gray-500">
+                                <span>E-commerce</span> • <span>US Copywriting</span> • <span>UI</span>
+                            </div>
+                            <button onclick="openProjectDetail('anyeluz')" class="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl sunset-btn-primary text-white text-xs font-bold">
+                                <span data-i18n="btnViewDetail">View Details</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Adsmovil Amazon Formats -->
+                    <div class="rounded-3xl glass-card overflow-hidden border border-amber-500/20 flex flex-col justify-between group hover:shadow-2xl transition-all">
+                        <div class="p-8 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-500 border border-amber-500/30">
+                                    Interactive Rich Media
+                                </span>
+                                <i class="fa-solid fa-rectangle-ad text-2xl text-amber-500"></i>
+                            </div>
+
+                            <h3 class="text-2xl font-display font-bold group-hover:text-rose-500 transition-colors" data-i18n="p4Title">
+                                Adsmovil Interactive Layouts for Global Brands
+                            </h3>
+
+                            <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed" data-i18n="p4Desc">
+                                Designed responsive layouts and interactive digital formats for global brands such as Amazon in both Spanish and English.
+                            </p>
+
+                            <div class="pt-2">
+                                <p class="text-xs font-semibold uppercase text-rose-500 mb-2" data-i18n="pKeyHighlights">Key Highlights:</p>
+                                <ul class="text-xs text-gray-500 dark:text-gray-400 space-y-1.5 list-disc list-inside">
+                                    <li data-i18n="p4H1">Inmersive responsive digital advertising layouts.</li>
+                                    <li data-i18n="p4H2">Direct stakeholder management in English with US market clients.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-black/5 dark:bg-white/5 border-t border-gray-200/50 dark:border-purple-900/30 flex items-center justify-between">
+                            <div class="flex space-x-2 text-xs font-medium text-gray-500">
+                                <span>Amazon</span> • <span>Rich Media</span> • <span>Bilingual</span>
+                            </div>
+                            <button onclick="openProjectDetail('adsmovil')" class="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl sunset-btn-primary text-white text-xs font-bold">
+                                <span data-i18n="btnViewDetail">View Details</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs uppercase tracking-widest font-extrabold text-rose-500 mb-2" data-i18n="expPre">Professional Career</h2>
+                    <p class="text-3xl sm:text-4xl font-display font-bold" data-i18n="expTitle">Work Experience</p>
+                    <div class="w-16 h-1 bg-gradient-to-r from-amber-500 to-rose-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto space-y-8 relative before:absolute before:inset-0 before:left-4 sm:before:left-1/2 before:-ml-px before:w-0.5 before:bg-gradient-to-b before:from-amber-500 before:via-rose-500 before:to-purple-600">
+                    
+                    <!-- Exp Item 1 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="flex items-center justify-center w-9 h-9 rounded-full bg-amber-500 text-white font-bold text-xs shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        
+                        <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl border border-amber-500/20 shadow-md">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-bold text-amber-500 uppercase tracking-wide" data-i18n="e1Dates">April 2026 - Present</span>
+                                <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-300">E-commerce</span>
+                            </div>
+                            <h3 class="font-display font-bold text-lg" data-i18n="e1Role">Digital & UI Designer</h3>
+                            <p class="text-xs font-semibold text-rose-500 mb-3">Anyeluz</p>
+
+                            <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-2 list-disc list-inside">
+                                <li data-i18n="e1L1"><strong>E-commerce UI Optimization:</strong> Structured visual layout for web and digital sales channels to improve usability and conversion.</li>
+                                <li data-i18n="e1L2"><strong>Visual Hierarchy:</strong> Translated commercial briefs into clean layouts and functional iconographies.</li>
+                                <li data-i18n="e1L3"><strong>International Projects:</strong> Created digital assets for the US market (Anyeluz USA), writing commercial copy in English.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Exp Item 2 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="flex items-center justify-center w-9 h-9 rounded-full bg-rose-500 text-white font-bold text-xs shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fa-solid fa-desktop"></i>
+                        </div>
+
+                        <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl border border-rose-500/20 shadow-md">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-bold text-rose-500 uppercase tracking-wide" data-i18n="e2Dates">Feb 2022 - Oct 2025</span>
+                                <span class="text-[10px] px-2 py-0.5 rounded bg-rose-500/10 text-rose-400">AdTech & Global</span>
+                            </div>
+                            <h3 class="font-display font-bold text-lg" data-i18n="e2Role">Digital Web Designer</h3>
+                            <p class="text-xs font-semibold text-amber-500 mb-3">Adsmovil</p>
+
+                            <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-2 list-disc list-inside">
+                                <li data-i18n="e2L1"><strong>Interactive Layouts:</strong> Designed responsive layouts and interactive digital formats for global brands such as Amazon.</li>
+                                <li data-i18n="e2L2"><strong>International Communication:</strong> Handled project management and business communications in English with US stakeholders.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Exp Item 3 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="flex items-center justify-center w-9 h-9 rounded-full bg-purple-600 text-white font-bold text-xs shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl border border-purple-500/20 shadow-md">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-bold text-purple-400 uppercase tracking-wide" data-i18n="e3Dates">Oct 2020 - Apr 2021</span>
+                                <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/10 text-purple-300">E-commerce CRO</span>
+                            </div>
+                            <h3 class="font-display font-bold text-lg" data-i18n="e3Role">Digital Marketing Coordinator</h3>
+                            <p class="text-xs font-semibold text-rose-500 mb-3">Rey Naranjo Editores</p>
+
+                            <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-2 list-disc list-inside">
+                                <li data-i18n="e3L1"><strong>E-commerce Interface Redesign:</strong> Implemented layout and navigation improvements on WordPress.</li>
+                                <li data-i18n="e3L2"><strong>Measured Results:</strong> Achieved a <strong>35% increase in online sales</strong> by optimizing user navigation flows.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-amber-50/50 dark:bg-purple-950/20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs uppercase tracking-widest font-extrabold text-rose-500 mb-2" data-i18n="contactPre">Get In Touch</h2>
+                    <p class="text-3xl sm:text-4xl font-display font-bold" data-i18n="contactTitle">Direct Contact</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2" data-i18n="contactSub">Have a project in mind or looking for a UI/UX Designer? Reach out directly!</p>
+                    <div class="w-16 h-1 bg-gradient-to-r from-amber-500 to-rose-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="glass-card p-6 rounded-2xl border border-amber-500/20 flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block font-medium" data-i18n="contactEmailLabel">Email Address</span>
+                                <a href="mailto:catalinapinzon1@gmail.com" class="font-display font-bold text-base hover:text-rose-500 transition-colors">
+                                    catalinapinzon1@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-2xl border border-rose-500/20 flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block font-medium" data-i18n="contactPhoneLabel">Phone / WhatsApp</span>
+                                <a href="tel:+573209514313" class="font-display font-bold text-base hover:text-rose-500 transition-colors">
+                                    +57 320 951 4313
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-2xl border border-purple-500/20 flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block font-medium" data-i18n="contactLocLabel">Location</span>
+                                <span class="font-display font-bold text-base">Sabaneta, Colombia</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-gradient-to-tr from-amber-500/10 via-rose-500/10 to-purple-600/10 border border-rose-500/20 space-y-3">
+                            <h4 class="font-display font-bold text-sm" data-i18n="contactPortLinksTitle">Interactive Online Portfolios:</h4>
+                            <div class="flex flex-col space-y-2 text-xs">
+                                <a href="https://imaginary-marlin-58a.notion.site/Hi-I-m-Diana-122d0011062b807b816aefa451967b52#122d0011062b81939df5e315dba09f29" target="_blank" class="flex items-center justify-between p-2.5 rounded-lg bg-white/60 dark:bg-purple-900/40 hover:bg-white transition-colors">
+                                    <span class="font-semibold"><i class="fa-solid fa-book text-purple-400 mr-2"></i>Notion Portfolio</span>
+                                    <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                                </a>
+                                <a href="https://www.behance.net/catalinapid922" target="_blank" class="flex items-center justify-between p-2.5 rounded-lg bg-white/60 dark:bg-purple-900/40 hover:bg-white transition-colors">
+                                    <span class="font-semibold"><i class="fa-brands fa-behance text-blue-500 mr-2"></i>Behance Profile</span>
+                                    <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-7">
+                        <div class="glass-card p-8 rounded-3xl border border-rose-500/20 shadow-xl relative">
+                            
+                            <div id="contactSuccess" class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-sm flex items-center space-x-3">
+                                <i class="fa-solid fa-circle-check text-xl shrink-0"></i>
+                                <div>
+                                    <p class="font-bold" data-i18n="formSuccessTitle">Message sent successfully!</p>
+                                    <p class="text-xs" data-i18n="formSuccessSub">Thank you for getting in touch. Diana will reply shortly.</p>
+                                </div>
+                            </div>
+
+                            <form id="contactForm" class="space-y-6">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="name" class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2" data-i18n="formNameLabel">Full Name</label>
+                                        <input type="text" id="name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-purple-800 bg-white/50 dark:bg-purple-950/40 focus:ring-2 focus:ring-rose-500 focus:outline-none transition-all text-sm">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2" data-i18n="formEmailLabel">Email Address</label>
+                                        <input type="email" id="email" required placeholder="you@company.com" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-purple-800 bg-white/50 dark:bg-purple-950/40 focus:ring-2 focus:ring-rose-500 focus:outline-none transition-all text-sm">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="subject" class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2" data-i18n="formSubLabel">Subject</label>
+                                    <input type="text" id="subject" required placeholder="Project Inquiry / UI UX Opportunity" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-purple-800 bg-white/50 dark:bg-purple-950/40 focus:ring-2 focus:ring-rose-500 focus:outline-none transition-all text-sm">
+                                </div>
+
+                                <div>
+                                    <label for="message" class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2" data-i18n="formMsgLabel">Message</label>
+                                    <textarea id="message" rows="4" required placeholder="Tell me about your project requirements..." class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-purple-800 bg-white/50 dark:bg-purple-950/40 focus:ring-2 focus:ring-rose-500 focus:outline-none transition-all text-sm"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full py-4 text-sm font-bold text-white sunset-btn-primary rounded-xl shadow-lg flex items-center justify-center space-x-2">
+                                    <span data-i18n="formSubmitBtn">Send Message</span>
+                                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Interactive Project Detail Drawer / Modal -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-md overflow-y-auto transition-opacity duration-300">
+        <div class="min-h-screen px-4 py-8 flex items-center justify-center">
+            <div class="glass-card bg-white dark:bg-[#1D182A] border border-rose-500/30 rounded-3xl max-w-5xl w-full p-6 sm:p-10 relative shadow-2xl space-y-8 my-auto">
+                
+                <!-- Close Button -->
+                <button onclick="closeProjectDetail()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-black/10 dark:bg-white/10 text-gray-700 dark:text-gray-200 hover:bg-rose-500 hover:text-white transition-all flex items-center justify-center">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+
+                <!-- Case Study Project Selector Navigation -->
+                <div class="border-b border-gray-200 dark:border-purple-900/40 pb-4">
+                    <span class="text-[10px] font-extrabold uppercase tracking-widest text-rose-500 mb-2 block" data-i18n="modalSelectorTitle">
+                        Interactive Case Study View
+                    </span>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="renderModalProject('hotel')" id="modal-tab-hotel" class="px-3.5 py-2 rounded-xl text-xs font-bold border transition-all">Hotel Booking App</button>
+                        <button onclick="renderModalProject('music')" id="modal-tab-music" class="px-3.5 py-2 rounded-xl text-xs font-bold border transition-all">Music Streaming App</button>
+                        <button onclick="renderModalProject('anyeluz')" id="modal-tab-anyeluz" class="px-3.5 py-2 rounded-xl text-xs font-bold border transition-all">Anyeluz E-commerce</button>
+                        <button onclick="renderModalProject('adsmovil')" id="modal-tab-adsmovil" class="px-3.5 py-2 rounded-xl text-xs font-bold border transition-all">Adsmovil Rich Media</button>
+                    </div>
+                </div>
+
+                <!-- Dynamic Detail Content -->
+                <div id="modalDynamicContent" class="space-y-8">
+                    <!-- Injected dynamically -->
+                </div>
+
+                <div class="pt-6 border-t border-gray-200 dark:border-purple-900/40 flex items-center justify-between">
+                    <button onclick="closeProjectDetail()" class="px-5 py-2.5 rounded-xl border border-gray-300 dark:border-purple-800 text-xs font-bold hover:bg-rose-500 hover:text-white transition-all">
+                        <span data-i18n="modalCloseBtn">Close View</span>
+                    </button>
+                    
+                    <a id="modalNotionLink" href="#" target="_blank" class="px-5 py-2.5 rounded-xl sunset-btn-primary text-white text-xs font-bold flex items-center space-x-2">
+                        <span data-i18n="modalFullDoc">Full Documentation in Notion</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 dark:border-purple-900/40 py-8 bg-amber-50/20 dark:bg-purple-950/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 dark:text-gray-400">
+            <div class="flex items-center space-x-2">
+                <span class="font-display font-bold text-rose-500">Diana Catalina Pinzón Bernal</span>
+                <span>• Sabaneta, Colombia</span>
+            </div>
+
+            <div class="flex items-center space-x-6">
+                <a href="https://www.behance.net/catalinapid922" target="_blank" class="hover:text-rose-500 transition-colors">Behance</a>
+                <a href="https://imaginary-marlin-58a.notion.site/Hi-I-m-Diana-122d0011062b807b816aefa451967b52#122d0011062b81939df5e315dba09f29" target="_blank" class="hover:text-rose-500 transition-colors">Notion</a>
+                <a href="mailto:catalinapinzon1@gmail.com" class="hover:text-rose-500 transition-colors">Email</a>
+            </div>
+
+            <div>
+                © 2026 Diana Pinzón.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Internationalization (i18n) Dictionary: Default EN, switchable to ES
+        const translations = {
+            en: {
+                navRole: "Digital & UI/UX Designer",
+                navAbout: "About Me",
+                navSkills: "Skills",
+                navPortfolio: "Portfolio",
+                navExperience: "Experience",
+                navContact: "Contact",
+                navCta: "Let's Talk",
+
+                heroStatus: "Available for UI/UX & Digital Design projects",
+                heroGreeting: "Hello, I'm",
+                heroTagline: "Digital & UI/UX Designer | Figma & E-commerce Specialist",
+                heroBio: "5+ years of experience structuring user flows, designing high-fidelity interactive prototypes in Figma, and optimizing digital layouts for conversion across global and e-commerce platforms.",
+                heroLocation: "Sabaneta, Colombia (Remote / Hybrid)",
+                heroCtaPortfolio: "Explore Work",
+                heroCtaContact: "Contact Me",
+                heroPortfoliosLabel: "Direct Portfolios:",
+                heroBadgeTitle: "Figma UI & Design Systems",
+                heroBadgeSub: "Interactive Prototypes & Components",
+                heroFeat1: "User Flows & Architecture",
+                heroFeat2: "E-commerce CRO & Layouts",
+                heroFeat3: "Bilingual English Proficiency (B2+)",
+                heroExpText: "5+ Years Experience",
+
+                aboutPre: "Get To Know Me",
+                aboutTitle: "About Me",
+                aboutP1: "Digital & UI/UX Designer with over 5 years of experience designing digital interfaces, optimizing user flows, and structuring information architecture for e-commerce environments and interactive platforms.",
+                aboutP2: "Hands-on experience using Figma to build interactive prototypes, reusable UI components, and structured visual libraries. Skilled at translating business requirements into clear visual hierarchies and user-friendly interfaces oriented toward sales conversion.",
+                aboutP3: "Proven track record working with international clients and cross-functional teams with professional communication and commercial copywriting in English (B2/B2+ level).",
+                aboutStat1: "Years Experience",
+                aboutStat2: "E-commerce Sales Boost",
+
+                pillar1Title: "UI & Wireframing",
+                pillar1Desc: "Meticulous interface layout for web & mobile with visual balance and ease of use.",
+                pillar2Title: "Design Systems",
+                pillar2Desc: "Building scalable component libraries, variants, and visual style guides in Figma.",
+                pillar3Title: "User Flows",
+                pillar3Desc: "Mapping user journeys to reduce friction in booking, registration, and checkout.",
+                pillar4Title: "Global Brand Strategy",
+                pillar4Desc: "Designing responsive rich media formats for Amazon and US market expansion.",
+
+                skillsPre: "Toolbox & Capabilities",
+                skillsTitle: "Skills & Expertise",
+                skillCat1: "UI/UX & Product",
+                skillCat2: "Software & Code",
+                skillCat3: "Education & Languages",
+                eduDegree: "Graphic Design Tech Degree",
+                langTitle: "English (Written / Prof.)",
+                langDesc: "Intermediate/Professional written communication for international projects.",
+
+                portPre: "Featured Case Studies",
+                portTitle: "Selected Work & Projects",
+                portSub: "Click any project card to open its detailed breakdown, user flow, and design system specs.",
+                pKeyHighlights: "Key Highlights:",
+                btnViewDetail: "View Details",
+
+                p1Title: "Hotel Booking App UI & User Flow",
+                p1Desc: "Mapped the end-to-end booking flow, designing intuitive interfaces for room selection, search filters, and checkout processes.",
+                p1H1: "Reusable Figma component library (buttons, cards, inputs).",
+                p1H2: "Structured visual hierarchy optimizing conversion rate.",
+
+                p2Title: "Music Streaming App UI & Prototyping",
+                p2Desc: "Created high-fidelity interactive prototypes in Figma to test mobile navigation and media playback touch interactions.",
+                p2H1: "Mobile thumb-zone navigation layout for one-handed use.",
+                p2H2: "Figma interactive component variants and smooth gesture transitions.",
+
+                p3Title: "Anyeluz E-commerce Interface & US Market",
+                p3Desc: "Designed and structured the visual layout for web and digital sales channels, tailoring digital assets for Anyeluz USA in English.",
+                p3H1: "Information hierarchy refinement to improve conversion.",
+                p3H2: "Commercial copywriting and messaging in English for US market launch.",
+
+                p4Title: "Adsmovil Interactive Layouts for Global Brands",
+                p4Desc: "Designed responsive layouts and interactive digital formats for global brands such as Amazon in both Spanish and English.",
+                p4H1: "Inmersive responsive digital advertising layouts.",
+                p4H2: "Direct stakeholder management in English with US market clients.",
+
+                expPre: "Professional Career",
+                expTitle: "Work Experience",
+                e1Dates: "April 2026 - Present",
+                e1Role: "Digital & UI Designer",
+                e1L1: "E-commerce UI Optimization: Structured visual layout for web and digital sales channels to improve usability and conversion.",
+                e1L2: "Visual Hierarchy: Translated commercial briefs into clean layouts and functional iconographies.",
+                e1L3: "International Projects: Created digital assets for the US market (Anyeluz USA), writing commercial copy in English.",
+
+                e2Dates: "Feb 2022 - Oct 2025",
+                e2Role: "Digital Web Designer",
+                e2L1: "Interactive Layouts: Designed responsive layouts and interactive digital formats for global brands such as Amazon.",
+                e2L2: "International Communication: Handled project management and business communications in English with US stakeholders.",
+
+                e3Dates: "Oct 2020 - Apr 2021",
+                e3Role: "Digital Marketing Coordinator",
+                e3L1: "E-commerce Interface Redesign: Implemented layout and navigation improvements on WordPress.",
+                e3L2: "Measured Results: Achieved a 35% increase in online sales by optimizing user navigation flows.",
+
+                contactPre: "Get In Touch",
+                contactTitle: "Direct Contact",
+                contactSub: "Have a project in mind or looking for a UI/UX Designer? Reach out directly!",
+                contactEmailLabel: "Email Address",
+                contactPhoneLabel: "Phone / WhatsApp",
+                contactLocLabel: "Location",
+                contactPortLinksTitle: "Interactive Online Portfolios:",
+                formSuccessTitle: "Message sent successfully!",
+                formSuccessSub: "Thank you for getting in touch. Diana will reply shortly.",
+                formNameLabel: "Full Name",
+                formEmailLabel: "Email Address",
+                formSubLabel: "Subject",
+                formMsgLabel: "Message",
+                formSubmitBtn: "Send Message",
+
+                modalSelectorTitle: "Interactive Case Study View",
+                modalCloseBtn: "Close View",
+                modalFullDoc: "Full Documentation in Notion"
+            },
+            es: {
+                navRole: "Diseñadora Digital & UI/UX",
+                navAbout: "Sobre mí",
+                navSkills: "Habilidades",
+                navPortfolio: "Portafolio",
+                navExperience: "Experiencia",
+                navContact: "Contacto",
+                navCta: "Hablemos",
+
+                heroStatus: "Disponible para proyectos UI/UX y Diseño Digital",
+                heroGreeting: "Hola, soy",
+                heroTagline: "Diseñadora Digital & UI/UX | Figma & E-commerce Specialist",
+                heroBio: "+5 años de experiencia estructurando flujos de usuario, diseñando prototipos interactivos de alta fidelidad en Figma y optimizando la maquetación digital para conversión en e-commerce y plataformas globales.",
+                heroLocation: "Sabaneta, Colombia (Remoto / Híbrido)",
+                heroCtaPortfolio: "Ver Proyectos",
+                heroCtaContact: "Contáctame",
+                heroPortfoliosLabel: "Portafolios Directos:",
+                heroBadgeTitle: "Figma UI & Sistemas de Diseño",
+                heroBadgeSub: "Prototipos Interactivos & Componentes",
+                heroFeat1: "User Flows & Arquitectura de Info",
+                heroFeat2: "E-commerce CRO & Diagramación",
+                heroFeat3: "Inglés Profesional (Nivel B2+)",
+                heroExpText: "+5 Años de Experiencia",
+
+                aboutPre: "Conóceme",
+                aboutTitle: "Sobre Mí",
+                aboutP1: "Diseñadora Digital & UI/UX con más de 5 años de trayectoria maquetando interfaces digitales, optimizando flujos de trabajo (user flows) e impulsando la conversión en plataformas e-commerce e interactivas.",
+                aboutP2: "Dominio práctico de Figma para construir prototipos interactivos, componentes de UI reutilizables y librerías visuales completas. Hábil en traducir requerimientos comerciales en jerarquías visuales intuitivas orientadas a la venta.",
+                aboutP3: "Experiencia comprobada trabajando con clientes internacionales y equipos multidisciplinarios, con comunicación profesional y redacción comercial en inglés (B2/B2+).",
+                aboutStat1: "Años Experiencia",
+                aboutStat2: "Aumento Ventas E-commerce",
+
+                pillar1Title: "UI & Wireframing",
+                pillar1Desc: "Maquetación minuciosa de interfaces para web y móvil con equilibrio visual y usabilidad.",
+                pillar2Title: "Sistemas de Diseño",
+                pillar2Desc: "Construcción de librerías de componentes escalables, variantes y guías de estilo en Figma.",
+                pillar3Title: "Flujos de Usuario",
+                pillar3Desc: "Mapeo de rutas de navegación para reducir fricción en reservas, registros y checkout.",
+                pillar4Title: "Marcas Globales",
+                pillar4Desc: "Diseño de formatos rich media adaptables para Amazon y expansión al mercado de EE. UU.",
+
+                skillsPre: "Herramientas y Stack",
+                skillsTitle: "Habilidades Técnicas",
+                skillCat1: "UI/UX & Producto",
+                skillCat2: "Software & Código",
+                skillCat3: "Educación e Idiomas",
+                eduDegree: "Técnico Prof. Diseño Gráfico",
+                langTitle: "Inglés (Escrito / Prof.)",
+                langDesc: "Comunicación escrita intermedia/profesional para proyectos internacionales.",
+
+                portPre: "Casos de Estudio",
+                portTitle: "Proyectos Destacados",
+                portSub: "Haz clic en cualquier proyecto para abrir su desglose en detalle, user flow y sistema de diseño.",
+                pKeyHighlights: "Logros Clave:",
+                btnViewDetail: "Ver Detalle",
+
+                p1Title: "Hotel Booking App UI & Flujo de Reserva",
+                p1Desc: "Diseñé el flujo de reserva completo, maquetando interfaces intuitivas para selección de habitaciones, filtros y checkout.",
+                p1H1: "Librería de componentes reutilizables en Figma (botones, cards, inputs).",
+                p1H2: "Jerarquía visual estructurada orientada a la tasa de conversión.",
+
+                p2Title: "Music Streaming App - UI & Prototipado Interactivo",
+                p2Desc: "Creé prototipos interactivos de alta fidelidad en Figma para probar la navegación móvil y la reproducción de audio.",
+                p2H1: "Navegación móvil pensada para el alcance del pulgar con una sola mano.",
+                p2H2: "Variantes de componentes interactivos y transiciones gestuales en Figma.",
+
+                p3Title: "Anyeluz E-commerce Optimization & US Market",
+                p3Desc: "Estructuré el layout visual del sitio e-commerce y creé piezas digitales adaptadas para Anyeluz USA en inglés.",
+                p3H1: "Refinamiento de jerarquía de información para aumentar la conversión.",
+                p3H2: "Redacción comercial y contenidos en inglés para el mercado estadounidense.",
+
+                p4Title: "Adsmovil Layouts Interactivos para Marcas Top-Tier",
+                p4Desc: "Diseñé layouts responsive y formatos digitales interactivos para marcas globales como Amazon en español e inglés.",
+                p4H1: "Formatos publicitarios digitales inmersivos e interactivos.",
+                p4H2: "Gestión directa con clientes y stakeholders del mercado de EE. UU. en inglés.",
+
+                expPre: "Trayectoria Profesional",
+                expTitle: "Experiencia Laboral",
+                e1Dates: "Abril 2026 - Actualidad",
+                e1Role: "Diseñadora Digital & UI",
+                e1L1: "Optimización UI E-commerce: Estructuré la diagramación visual web para mejorar navegabilidad y conversiones.",
+                e1L2: "Jerarquía Visual: Traduje briefs comerciales en diagramaciones claras e iconografía funcional.",
+                e1L3: "Proyectos EE. UU.: Creé piezas digitales para el mercado estadounidense (Anyeluz USA) en inglés.",
+
+                e2Dates: "Feb 2022 - Oct 2025",
+                e2Role: "Digital Web Designer",
+                e2L1: "Layouts Interactivos: Diseñé interfaces inmersivas y formatos responsive para marcas globales como Amazon.",
+                e2L2: "Comunicación Bilingüe: Gestión de proyectos y reuniones profesionales en inglés con clientes de EE. UU.",
+
+                e3Dates: "Oct 2020 - Abr 2021",
+                e3Role: "Coordinación Marketing Digital",
+                e3L1: "Rediseño E-commerce: Implementé mejoras visuales y de navegación en WordPress.",
+                e3L2: "Resultados Medibles: Logré un incremento del 35% en las ventas en línea optimizando los flujos de navegación.",
+
+                contactPre: "Conectemos",
+                contactTitle: "Contacto Directo",
+                contactSub: "¿Tienes un proyecto en mente o buscas un perfil UI/UX? ¡Escríbeme!",
+                contactEmailLabel: "Correo Electrónico",
+                contactPhoneLabel: "Teléfono / WhatsApp",
+                contactLocLabel: "Ubicación",
+                contactPortLinksTitle: "Portafolios interactivos en línea:",
+                formSuccessTitle: "¡Mensaje enviado con éxito!",
+                formSuccessSub: "Gracias por escribir. Diana te responderá lo antes posible.",
+                formNameLabel: "Nombre Completo",
+                formEmailLabel: "Correo Electrónico",
+                formSubLabel: "Asunto",
+                formMsgLabel: "Mensaje",
+                formSubmitBtn: "Enviar Mensaje",
+
+                modalSelectorTitle: "Vista Interactiva de Casos de Estudio",
+                modalCloseBtn: "Cerrar Vista",
+                modalFullDoc: "Documentación Completa en Notion"
+            }
+        };
+
+        // Project Detail Detailed Modal Database
+        const modalProjectsData = {
+            hotel: {
+                id: 'hotel',
+                en: {
+                    title: 'Hotel Booking App UI Design & User Flow',
+                    subtitle: 'End-to-end hotel booking journey mapping, user interface layout, and Figma UI Kit library creation.',
+                    tag: 'Figma UI/UX Case Study',
+                    problem: 'Traditional mobile hotel booking processes often suffer from high cart abandonment due to cluttered room details, complex filters, and lengthy forms.',
+                    steps: [
+                        { t: '1. Search & Filter Bar', d: 'Interactive date pickers, guest counters, and filter chips.' },
+                        { t: '2. Room Comparison UI', d: 'Clean cards contrasting price, bed options, and cancellation policies.' },
+                        { t: '3. 3-Step Checkout', d: 'Guest details, payment gateway layout, and instant visual receipt.' }
+                    ],
+                    impact: [
+                        'Reduced simulated checkout drop-offs through friction-free user flows.',
+                        'Built a reusable Figma UI kit with 30+ accessible components.',
+                        'Achieved top evaluation rating in TripleTen UX/UI Bootcamp.'
+                    ]
+                },
+                es: {
+                    title: 'Hotel Booking App UI Design & User Flow',
+                    subtitle: 'Mapeo completo del flujo de reserva hotelera, maquetación de interfaces y librería de componentes en Figma.',
+                    tag: 'Caso de Estudio Figma UI/UX',
+                    problem: 'Los procesos tradicionales de reserva en dispositivos móviles sufren una alta tasa de abandono por formularios saturados y falta de claridad en los filtros.',
+                    steps: [
+                        { t: '1. Filtros & Búsqueda', d: 'Selectores de fecha interactivos, número de huéspedes y chips de filtro.' },
+                        { t: '2. Comparativa de Habitaciones', d: 'Cards limpias contrastando precios, camas y políticas de cancelación.' },
+                        { t: '3. Checkout en 3 Pasos', d: 'Datos de huésped, pasarela de pago y recibo de confirmación visual.' }
+                    ],
+                    impact: [
+                        'Reducción de abandonos mediante un flujo continuo sin fricciones.',
+                        'Librería de más de 30 componentes reutilizables maquetados en Figma.',
+                        'Aprobado con la más alta calificación en TripleTen Bootcamp.'
+                    ]
+                },
+                notionUrl: 'https://imaginary-marlin-58a.notion.site/Hi-I-m-Diana-122d0011062b807b816aefa451967b52#122d0011062b81939df5e315dba09f29'
+            },
+            music: {
+                id: 'music',
+                en: {
+                    title: 'Music Streaming App - UI & Interactive Prototyping',
+                    subtitle: 'Mobile media player UI focused on thumb-zone navigation, swipe gestures, and high-fidelity Figma prototypes.',
+                    tag: 'Interactive Figma Prototype',
+                    problem: 'Music apps frequently clutter screen real estate with small icons, making single-handed navigation difficult during workouts or commuting.',
+                    steps: [
+                        { t: '1. Mood-based Discovery Feed', d: 'Categorized infinite feeds tailored to morning, gym, or focus sessions.' },
+                        { t: '2. Expandable Mini Player', d: 'Bottom docked player expanding into full lyrics and audio controls with swipe gestures.' },
+                        { t: '3. Quick Playlist Curator', d: 'Instant song add with visual haptic feedback.' }
+                    ],
+                    impact: [
+                        'Successfully validated single-handed mobile navigation layout.',
+                        'Advanced use of Figma component variants and micro-interactions.',
+                        'High usability score in prototype user testing rounds.'
+                    ]
+                },
+                es: {
+                    title: 'Music Streaming App - UI & Prototipado Interactivo',
+                    subtitle: 'Interfaz móvil enfocada en el alcance del pulgar, gestos de deslizamiento y prototipos interactivos en Figma.',
+                    tag: 'Prototipo Interactivo Figma',
+                    problem: 'Las aplicaciones de música suelen saturar la pantalla con controles pequeños, complicando el uso con una sola mano.',
+                    steps: [
+                        { t: '1. Feed por Estado de Ánimo', d: 'Feeds infinitos categorizados para entrenamiento, concentración o descanso.' },
+                        { t: '2. Reproductor Flotante', d: 'Dock inferior que se expande a letras y controles mediante gestos.' },
+                        { t: '3. Gestor de Playlists', d: 'Adición rápida de canciones con respuesta visual inmediata.' }
+                    ],
+                    impact: [
+                        'Validación exitosa de maquetación para uso móvil con una sola mano.',
+                        'Uso avanzado de variantes de componentes y micro-interacciones en Figma.',
+                        'Alta puntuación de usabilidad en pruebas de prototipo.'
+                    ]
+                },
+                notionUrl: 'https://imaginary-marlin-58a.notion.site/Hi-I-m-Diana-122d0011062b807b816aefa451967b52#122d0011062b81939df5e315dba09f29'
+            },
+            anyeluz: {
+                id: 'anyeluz',
+                title: 'Anyeluz E-commerce Interface & US Market',
+                en: {
+                    title: 'Anyeluz E-commerce Optimization & US Market Launch',
+                    subtitle: 'E-commerce interface layout restructuring, information hierarchy refinement, and English asset creation for Anyeluz USA.',
+                    tag: 'Real World E-commerce Project',
+                    problem: 'Dispersed product information hierarchy on hair care catalogs led to bounce rates on product detail pages for international customers.',
+                    steps: [
+                        { t: '1. Catalog Heatmap Audit', d: 'Identified user drop-off points in product descriptions.' },
+                        { t: '2. Visual Hierarchy Overhaul', d: 'Structured PDP sections: Key Benefits, Ingredients, and How to Use.' },
+                        { t: '3. Anyeluz USA Localization', d: 'Commercial copy and technical product messaging translated into English.' }
+                    ],
+                    impact: [
+                        'Boosted visual clarity for online buyers leading to higher CRO.',
+                        'Successfully launched digital assets for the Anyeluz USA expansion.',
+                        'Maintained brand design system consistency across channels.'
+                    ]
+                },
+                es: {
+                    title: 'Anyeluz E-commerce Optimization & US Market Launch',
+                    subtitle: 'Reestructuración del layout e-commerce, jerarquía de información y creación de piezas en inglés para Anyeluz USA.',
+                    tag: 'Proyecto E-commerce Real',
+                    problem: 'La información dispersa en las fichas de producto provocaba puntos de fuga en compradores internacionales.',
+                    steps: [
+                        { t: '1. Auditoría de Fichas de Producto', d: 'Identificación de zonas de fuga en descripciones del catálogo.' },
+                        { t: '2. Reestructuración de Jerarquía Visual', d: 'Secciones claras: Beneficios, Ingredientes y Modo de uso.' },
+                        { t: '3. Adaptación Anyeluz USA', d: 'Redacción de contenidos comerciales y técnicos en inglés.' }
+                    ],
+                    impact: [
+                        'Aumento en la claridad visual impulsando la tasa de conversión.',
+                        'Lanzamiento exitoso de piezas digitales para el mercado de EE. UU.',
+                        'Coherencia sostenida en el sistema de diseño de marca.'
+                    ]
+                },
+                notionUrl: 'https://imaginary-marlin-58a.notion.site/Hi-I-m-Diana-122d0011062b807b816aefa451967b52#122d0011062b81939df5e315dba09f29'
+            },
+            adsmovil: {
+                id: 'adsmovil',
+                en: {
+                    title: 'Adsmovil Interactive Rich Media Formats for Amazon & Top Brands',
+                    subtitle: 'Responsive interactive layouts and rich media formats for global brands in Spanish and English.',
+                    tag: 'International AdTech & Global Brands',
+                    problem: 'Standard digital mobile ads suffer from visual fatigue and low CTR without interactive and responsive rich media layouts.',
+                    steps: [
+                        { t: '1. Brand Standards Compliance', d: 'Adherence to strict Amazon design guidelines in EN and ES.' },
+                        { t: '2. Interactive Rich Media Layouts', d: 'Expandables, product carousels, and tap-to-engage overlays.' },
+                        { t: '3. Multi-screen Responsive QA', d: 'Ensuring seamless fidelity across mobile and tablet viewports.' }
+                    ],
+                    impact: [
+                        'Consistent campaign delivery for Amazon and global top-tier clients.',
+                        'Direct English business communications with US stakeholders.',
+                        'Higher CTR engagement on interactive ad formats.'
+                    ]
+                },
+                es: {
+                    title: 'Adsmovil Layouts Interactivos para Amazon & Marcas Top-Tier',
+                    subtitle: 'Layouts responsive e interactivos para marcas globales en español e inglés.',
+                    tag: 'Formatos Rich Media Internacionales',
+                    problem: 'Los banners publicitarios estándar sufren de fatiga visual si no ofrecen formatos interactivos e inmersivos.',
+                    steps: [
+                        { t: '1. Guías de Marca Amazon', d: 'Alineación estricta a manuales de marca internacionales en EN y ES.' },
+                        { t: '2. Layouts Rich Media Interactivos', d: 'Formatos expandibles, carruseles de producto y overlays.' },
+                        { t: '3. QA Responsive Multidispositivo', d: 'Garantía de adaptación en pantallas móviles y tablets.' }
+                    ],
+                    impact: [
+                        'Entrega constante de campañas para Amazon y marcas líderes.',
+                        'Comunicación fluida en inglés con clientes y stakeholders de EE. UU.',
+                        'Mayor porcentaje de interacción (CTR) en formatos interactivos.'
+                    ]
+                },
+                notionUrl: 'https://imaginary-marlin-58a.notion.site/Hi-I-m-Diana-122d0011062b807b816aefa451967b52#122d0011062b81939df5e315dba09f29'
+            }
+        };
+
+        // Current Application State
+        let currentLang = 'en'; // English is the default state
+        let currentModalProjectKey = 'hotel';
+
+        // Update All Text Nodes with Data Attributes
+        function updateI18n() {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang] && translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+
+            // Update Language Switcher Toggle Label
+            document.getElementById('langLabel').textContent = currentLang === 'en' ? 'ES' : 'EN';
+            
+            // Re-render modal if visible
+            if(!document.getElementById('projectModal').classList.contains('hidden')) {
+                renderModalProject(currentModalProjectKey);
+            }
+        }
+
+        // Language Switcher Listener
+        document.getElementById('langToggle').addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'es' : 'en';
+            document.documentElement.lang = currentLang;
+            updateI18n();
+        });
+
+        // Theme Switcher Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeIcon.className = 'fa-solid fa-sun text-base';
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.className = 'fa-solid fa-moon text-base';
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeIcon.className = 'fa-solid fa-moon text-base';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.className = 'fa-solid fa-sun text-base';
+            }
+        });
+
+        // Mobile Menu Drawer Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.className = mobileMenu.classList.contains('hidden') ? 'fa-solid fa-bars' : 'fa-solid fa-xmark';
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars';
+            });
+        });
+
+        // Contact Form Feedback Handler
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const successToast = document.getElementById('contactSuccess');
+            successToast.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                successToast.classList.add('hidden');
+            }, 6000);
+        });
+
+        // Interactive Project Detail Modal Render Functions
+        function openProjectDetail(projectKey) {
+            currentModalProjectKey = projectKey;
+            renderModalProject(projectKey);
+            document.getElementById('projectModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectDetail() {
+            document.getElementById('projectModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function renderModalProject(key) {
+            currentModalProjectKey = key;
+            const projRaw = modalProjectsData[key];
+            const p = projRaw[currentLang];
+
+            // Tab button highlight
+            ['hotel', 'music', 'anyeluz', 'adsmovil'].forEach(k => {
+                const tabBtn = document.getElementById(`modal-tab-${k}`);
+                if (k === key) {
+                    tabBtn.className = 'px-3.5 py-2 rounded-xl text-xs font-bold bg-rose-500 text-white border-rose-500 shadow-md';
+                } else {
+                    tabBtn.className = 'px-3.5 py-2 rounded-xl text-xs font-bold border border-gray-300 dark:border-purple-800 text-gray-600 dark:text-gray-300 hover:border-rose-400';
+                }
+            });
+
+            document.getElementById('modalNotionLink').href = projRaw.notionUrl;
+
+            const container = document.getElementById('modalDynamicContent');
+            container.innerHTML = `
+                <div class="space-y-4">
+                    <span class="px-3 py-1 rounded-full text-xs font-semibold bg-rose-500/10 text-rose-500 border border-rose-500/30">
+                        ${p.tag}
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-display font-extrabold">${p.title}</h2>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">${p.subtitle}</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-6 rounded-2xl bg-amber-500/10 border border-amber-500/20 space-y-2">
+                        <h3 class="font-display font-bold text-sm text-amber-600 dark:text-amber-300 flex items-center">
+                            <i class="fa-solid fa-triangle-exclamation mr-2"></i> User Experience Challenge
+                        </h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">${p.problem}</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-purple-500/10 border border-purple-500/20 space-y-2">
+                        <h3 class="font-display font-bold text-sm text-purple-400 flex items-center">
+                            <i class="fa-solid fa-swatchbook mr-2"></i> Figma UI Kit & System
+                        </h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Structured auto-layout components, color tokens, and interactive variants for responsive viewports.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h3 class="font-display font-bold text-sm uppercase tracking-wider text-rose-500">
+                        Solution & User Flow Architecture:
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        ${p.steps.map(s => `
+                            <div class="p-4 rounded-xl bg-black/5 dark:bg-white/5 border border-gray-200/50 dark:border-purple-900/40 space-y-1">
+                                <h4 class="text-xs font-bold text-rose-500">${s.t}</h4>
+                                <p class="text-[11px] text-gray-500 dark:text-gray-400">${s.d}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h3 class="font-display font-bold text-sm uppercase tracking-wider text-rose-500">
+                        Key Impact & Results:
+                    </h3>
+                    <ul class="space-y-2">
+                        ${p.impact.map(imp => `
+                            <li class="flex items-center space-x-2 text-xs text-gray-600 dark:text-gray-300">
+                                <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                                <span>${imp}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+
+        // Initialize i18n on page load (Default: English)
+        window.addEventListener('DOMContentLoaded', () => {
+            updateI18n();
+        });
+    </script>
+</body>
+</html>

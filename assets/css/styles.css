@@ -1,0 +1,58 @@
+:root {
+            --bg-primary: #FAF7F2;
+            --bg-secondary: #FFFDF9;
+            --text-primary: #1D182A;
+            --text-secondary: #6B4E71;
+            --card-bg: rgba(255, 255, 255, 0.88);
+            --card-border: rgba(232, 93, 117, 0.18);
+        }
+
+        .dark {
+            --bg-primary: #120F1D;
+            --bg-secondary: #1D182A;
+            --text-primary: #FAF7F2;
+            --text-secondary: #D8B4E2;
+            --card-bg: rgba(29, 24, 42, 0.82);
+            --card-border: rgba(255, 107, 107, 0.22);
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sunset-gradient-text {
+            background: linear-gradient(135deg, #FF8A00 0%, #E85D75 50%, #A044FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sunset-btn-primary {
+            background: linear-gradient(135deg, #FF6B6B 0%, #E85D75 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .sunset-btn-primary:hover {
+            background: linear-gradient(135deg, #FF5252 0%, #D84360 100%);
+            box-shadow: 0 10px 25px -5px rgba(232, 93, 117, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .glass-card {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E85D75;
+            border-radius: 4px;
+        }
